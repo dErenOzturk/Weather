@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center align-items-center vh-100" style="background-color: #4b515d">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card" style="color: #4b515d; border-radius: 35px;">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-center mb-4">
+                <input class="form-control me-2" type="text" [(ngModel)]="city" placeholder="Şehir adını girin" #cityInput (keyup.enter)="getWeather(city); cityInput.value = ''"/>
+                <button class="btn btn-primary" (click)="getWeather(city); cityInput.value = ''">Hava Durumu Getir</button>
+              </div>
+              
+              <div *ngIf="weatherData" class="text-center">
+                <h6>{{ weatherData.name }}</h6>
+                <h6>{{ currentDateTime | date : "HH:mm" }}</h6>
+  
+                <div class="display-4 font-weight-bold" style="color: #1c2331">
+                  {{ weatherData.main.temp | kelvinToCelsius }}
+                </div>
+                <span class="small" style="color: #868b94">{{ weatherData.weather[0].description | titlecase }}</span>
+  
+                <div class="d-flex justify-content-center mt-4">
+                  <div class="me-4">
+                    <i class="fas fa-wind fa-fw" style="color: #868b94"></i>
+                    <span class="ms-1">{{ weatherData.wind.speed }} km/h</span>
+                  </div>
+                  <div>
+                    <i class="fas fa-tint fa-fw" style="color: #868b94"></i>
+                    <span class="ms-1">{{ weatherData.main.humidity }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
