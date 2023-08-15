@@ -1,0 +1,26 @@
+.custom-navbar {
+  height: 70px;
+}
+
+.custom-brand {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.custom-collapse {
+  font-size: 20px;
+  color: black;
+}
+
+.custom-link {
+  margin-left: 25px;
+}
+
+.custom-link:active,
+.custom-link:focus {
+  font-weight: 500;
+}
+
+.custom-header {
+  background-color: rgb(145, 199, 214)
+}
